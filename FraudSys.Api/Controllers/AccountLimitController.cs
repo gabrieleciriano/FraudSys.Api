@@ -1,4 +1,5 @@
 using FraudSys.Domain.Commands.v1.CreateAccountLimit;
+using FraudSys.Domain.Queries.v1.GetAccountLimit;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -27,6 +28,17 @@ namespace FraudSys.Api.Controllers
             if (!success) return BadRequest("It was not possible to save the limit");
 
             return Ok(new { Message = "Limit successfully registered" });
+        }
+
+        [HttpGet("get")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> GetAccountLimit([FromBody] GetAccountLimitQuery query)
+        {
+            if (query == null) return NotFound();
+
+            var response = await _mediator.Send(query);
+
+            return Ok(response);
         }
     }
 }

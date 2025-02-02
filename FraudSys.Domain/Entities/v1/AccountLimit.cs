@@ -23,6 +23,8 @@ namespace FraudSys.Domain.Entities.v1
         [DynamoDBProperty]
         public DateTime UpdatedAt { get; private set; }
 
+        public AccountLimit() { }
+
         public AccountLimit(string cpf, string agencyNumber, string accountNumber, double pixLimit)
         {
             CPF = cpf;
@@ -31,6 +33,12 @@ namespace FraudSys.Domain.Entities.v1
             PixLimit = pixLimit;
             CreatedAt = DateTime.Now;
             UpdatedAt = DateTime.Now;
+        }
+
+        public AccountLimit(string cpf, string agencyNumber)
+        {
+            CPF = cpf;
+            AgencyNumber = agencyNumber;
         }
     }
 }
