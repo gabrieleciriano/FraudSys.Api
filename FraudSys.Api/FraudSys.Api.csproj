@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FraudSys.CrossCutting.Configuration\FraudSys.CrossCutting.Configuration.csproj" />
+    <ProjectReference Include="..\FraudSys.Domain\FraudSys.Domain.csproj" />
+    <ProjectReference Include="..\FraudSys.Infrastructure\FraudSys.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -5,6 +5,22 @@ VisualStudioVersion = 17.12.35521.163 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudSys.Api", "FraudSys.Api\FraudSys.Api.csproj", "{C3CE7D2C-DDA8-48E6-A2CC-6B7D63A6D803}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{6E7092BF-0CEF-43A1-B48B-15B73729EEFB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{7ADA39DF-E85F-44F7-A7C8-D0D246C4F807}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{39E5B6D6-AAA4-4872-A846-5E1761932F2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - CrossCutting", "4 - CrossCutting", "{28CA6CC5-6C62-4C69-89BB-BFBBA76EDEF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{CD925FC5-1DD8-4947-BE6A-C671DE34F383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudSys.Domain", "FraudSys.Domain\FraudSys.Domain.csproj", "{13AD210A-F54C-4171-A04C-C2F36FD67E1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudSys.Infrastructure.Data", "FraudSys.Infrastructure\FraudSys.Infrastructure.Data.csproj", "{0030077B-E54D-449A-8D36-60F2761841C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudSys.CrossCutting.Configuration", "FraudSys.CrossCutting.Configuration\FraudSys.CrossCutting.Configuration.csproj", "{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +31,26 @@ Global
 		{C3CE7D2C-DDA8-48E6-A2CC-6B7D63A6D803}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3CE7D2C-DDA8-48E6-A2CC-6B7D63A6D803}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3CE7D2C-DDA8-48E6-A2CC-6B7D63A6D803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13AD210A-F54C-4171-A04C-C2F36FD67E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13AD210A-F54C-4171-A04C-C2F36FD67E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13AD210A-F54C-4171-A04C-C2F36FD67E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13AD210A-F54C-4171-A04C-C2F36FD67E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0030077B-E54D-449A-8D36-60F2761841C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0030077B-E54D-449A-8D36-60F2761841C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0030077B-E54D-449A-8D36-60F2761841C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0030077B-E54D-449A-8D36-60F2761841C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3CE7D2C-DDA8-48E6-A2CC-6B7D63A6D803} = {6E7092BF-0CEF-43A1-B48B-15B73729EEFB}
+		{13AD210A-F54C-4171-A04C-C2F36FD67E1F} = {7ADA39DF-E85F-44F7-A7C8-D0D246C4F807}
+		{0030077B-E54D-449A-8D36-60F2761841C8} = {39E5B6D6-AAA4-4872-A846-5E1761932F2D}
+		{7892D635-FDC8-423A-BF3E-FF5C6BDD4E3E} = {28CA6CC5-6C62-4C69-89BB-BFBBA76EDEF6}
 	EndGlobalSection
 EndGlobal
