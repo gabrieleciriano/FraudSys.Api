@@ -1,4 +1,5 @@
 using FraudSys.Domain.Commands.v1.CreateAccountLimit;
+using FraudSys.Domain.Commands.v1.DeleteAccountLimit;
 using FraudSys.Domain.Commands.v1.UpdateAccountLimit;
 using FraudSys.Domain.Queries.v1.GetAccountLimit;
 using MediatR;
@@ -51,6 +52,17 @@ namespace FraudSys.Api.Controllers
              await _mediator.Send(command);
 
             return Ok(new { Message = "Limit successfully updated. Please check your new limit." });
+        }
+
+        [HttpDelete("delete")]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.OK)]
+        public async Task<IActionResult> DeleteAccountLimit([FromBody] DeleteAccountLimitCommand command)
+        {
+            if (command == null) return NotFound();
+
+            await _mediator.Send(command);
+
+            return Ok(new { Message =  "The account was successfully deleted." });
         }
     }
 }

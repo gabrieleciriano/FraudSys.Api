@@ -14,6 +14,16 @@ namespace FraudSys.Infrastructure.Data.Dynamo.v1.Repositories
             _context = context;
         }
 
+        public async Task DeleteAccountLimitAsync(string cpf, string agencyNumber, string accountNumber)
+        {
+            var accountLimit = await GetAccountLimitAsync(cpf, agencyNumber);
+
+            if (accountLimit is null)
+                throw new KeyNotFoundException("Account not found.");
+
+            await _context.DeleteAsync(accountLimit);
+        }
+
         public async Task<AccountLimit> GetAccountLimitAsync(string cpf, string agencyNumber)
         {
             var query = _context.QueryAsync<AccountLimit>(cpf, QueryOperator.Equal, [agencyNumber]);

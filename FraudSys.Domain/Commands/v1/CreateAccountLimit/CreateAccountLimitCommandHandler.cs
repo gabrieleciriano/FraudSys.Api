@@ -12,17 +12,36 @@ namespace FraudSys.Domain.Commands.v1.CreateAccountLimit
         {
             _accountLimitRepository = accountLimitRepository;
         }
+
         public async Task<bool> Handle(CreateAccountLimitCommand request, CancellationToken cancellationToken)
         {
-            //implementar try catch
-            //se der tempo, implementar logs
-            //verificar questão de todos os campos serem obrigatórios.
-            //talvez implementar que não se pode registrar um limite caso já exista, somente alterar.
-            var accountLimit = new AccountLimit(request.CPF, request.AgencyNumber, request.AccountNumber, request.PixLimit);
+            try
+            {
+                if (string.IsNullOrEmpty(request.CPF) || string.IsNullOrEmpty(request.AgencyNumber) ||
+                    string.IsNullOrEmpty(request.AccountNumber) || request.PixLimit <= 0)
 
-            await _accountLimitRepository.SaveAsync(accountLimit);
+                    throw new ArgumentException("CPF, AgencyNumber,AccountNumber and PixLimit fields are mandatory. Please, provide them.");
 
-            return true;
+                var existingAccountLimit = await _accountLimitRepository.GetAccountLimitAsync(request.CPF, request.AgencyNumber);
+                if (existingAccountLimit != null)
+                {
+                    throw new ArgumentException("The limit for this account has already been created.");
+                   
+                }
+                else
+                {
+                    var accountLimit = new AccountLimit(request.CPF, request.AgencyNumber, request.AccountNumber, request.PixLimit);
+                    
+                    await _accountLimitRepository.SaveAsync(accountLimit);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error Message: {ex}");
+               
+            }
         }
     }
 }

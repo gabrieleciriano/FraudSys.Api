@@ -7,5 +7,6 @@ namespace FraudSys.Domain.Interfaces.v1.Repositories
         Task SaveAsync(AccountLimit entity);
         Task<AccountLimit> GetAccountLimitAsync(string cpf, string agencyNumber);
         Task UpdateAccountLimitAsync(string cpf, string agencyNumber, double newLimit);
+        Task DeleteAccountLimitAsync(string cpf, string agencyNumber, string accountNumber);
     }
 }
