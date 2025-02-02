@@ -18,10 +18,10 @@ namespace FraudSys.Domain.Entities.v1
         public double PixLimit { get; set; }
 
         [DynamoDBProperty]
-        public DateTime CreatedAt { get; private set; }
+        public DateTime CreatedAt { get; set; }
 
         [DynamoDBProperty]
-        public DateTime UpdatedAt { get; private set; }
+        public DateTime UpdatedAt { get; set; }
 
         public AccountLimit() { }
 

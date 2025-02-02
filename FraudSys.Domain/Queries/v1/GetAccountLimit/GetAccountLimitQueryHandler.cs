@@ -20,7 +20,7 @@ namespace FraudSys.Domain.Queries.v1.GetAccountLimit
 
                 if (accountLimit is null)
                 {
-                    throw new KeyNotFoundException("The limit was not found for this account");
+                    throw new KeyNotFoundException("The limit was not found for this account.");
                 }
 
                 return new GetAccountLimitQueryResponse(accountLimit);

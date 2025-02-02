@@ -27,5 +27,18 @@ namespace FraudSys.Infrastructure.Data.Dynamo.v1.Repositories
         {
             await _context.SaveAsync(entity);
         }
+
+        public async Task UpdateAccountLimitAsync(string cpf, string agencyNumber, double newLimit)
+        {
+            var account = await GetAccountLimitAsync(cpf, agencyNumber);
+
+            if (account is null)
+                throw new KeyNotFoundException("Account not found.");
+
+            account.PixLimit = newLimit;
+            account.UpdatedAt = DateTime.Now;
+
+            await _context.SaveAsync(account);
+        }
     }
 }

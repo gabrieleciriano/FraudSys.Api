@@ -6,6 +6,5 @@ namespace FraudSys.Domain.Queries.v1.GetAccountLimit
     {
         public string CPF { get; set; }
         public string AgencyNumber { get; set; }
-
     }
 }
