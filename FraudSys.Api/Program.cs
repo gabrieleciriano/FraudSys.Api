@@ -5,7 +5,6 @@ using FraudSys.Domain.Commands.v1.CreateAccountLimit;
 using FraudSys.Domain.Interfaces.v1.Repositories;
 using FraudSys.Domain.Queries.v1.GetAccountLimit;
 using FraudSys.Infrastructure.Data.Dynamo.v1.Repositories;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -50,5 +50,23 @@ namespace FraudSys.Infrastructure.Data.Dynamo.v1.Repositories
 
             await _context.SaveAsync(account);
         }
+
+        public async Task<bool> ProcessPixTransactionAsync(string cpf, string agencyNumber, string accountNumber, double transactionAmount)
+        {
+                var accountLimit = await GetAccountLimitAsync(cpf, agencyNumber);
+
+                if (accountLimit == null)
+                    throw new KeyNotFoundException("Account not found.");
+
+                
+                if (accountLimit.PixLimit < transactionAmount)
+                    return false;
+                
+                accountLimit.PixLimit -= transactionAmount;
+
+                await SaveAsync(accountLimit);
+
+                return true;
+        }
     }
 }
