@@ -31,15 +31,21 @@ As transações de PIX devem passar pelo sistema de gestão de limites. O sistem
 
 **Tecnologias Utilizadas**
 <br>
+<br>
 .NET 8 para desenvolvimento do backend
+<br>
 DynamoDB para persistência de dados na AWS
+<br>
 XUnit para testes unitários
+<br>
 MediatR para mediação de requisições e comandos
+<br>
 Moq para mocking em testes unitários
+<br>
 
 **Testes Unitários**
 <br>
-O projeto inclui testes unitários utilizando o framework xUnit. Os testes garantem a correta funcionalidade do sistema de gestão de limites, incluindo:
+O projeto inclui testes unitários utilizando o framework xUnit. Os testes garantem a correta funcionalidade do sistema de gestão de limites.
 
 **Contribuições**
 <br>
