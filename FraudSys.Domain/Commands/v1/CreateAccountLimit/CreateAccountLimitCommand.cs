@@ -14,6 +14,11 @@ namespace FraudSys.Domain.Commands.v1.CreateAccountLimit
 
         public double PixLimit { get; set; }
 
+        public CreateAccountLimitCommand()
+        {
+
+        }
+
         public CreateAccountLimitCommand(string cpf, string agencyNumber, string accountNumber, double pixLimit)
         {
             CPF = cpf;
