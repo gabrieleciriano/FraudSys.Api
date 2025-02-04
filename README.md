@@ -36,7 +36,7 @@ As transações de PIX devem passar pelo sistema de gestão de limites. O sistem
 <br>
 .NET 8 para desenvolvimento do backend
 <br>
-DynamoDB para persistência de dados na AWS
+Dynamo AWS para persistência de dados na AWS
 <br>
 XUnit para testes unitários
 <br>
@@ -52,3 +52,7 @@ O projeto inclui testes unitários utilizando o framework xUnit. Os testes garan
 **Contribuições**
 <br>
 Se você deseja contribuir para o projeto, fique à vontade para criar um fork, fazer melhorias e enviar um pull request.
+
+**Importante**
+<br>
+Para utilizar o Dynamo AWS, criei uma imagem docker com sua instância e para realizar os testes da API, utilizei o Rancher Desktop e apenas rodava a imagem do banco de dados.
